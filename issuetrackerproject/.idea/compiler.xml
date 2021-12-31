@@ -9,5 +9,8 @@
         <module name="issuetrackerproject" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="issuetrackerproject" target="8" />
+    </bytecodeTargetLevel>
   </component>
 </project>
