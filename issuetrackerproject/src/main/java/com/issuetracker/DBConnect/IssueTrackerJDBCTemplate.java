@@ -46,8 +46,8 @@ public class IssueTrackerJDBCTemplate implements IssueTrackerDAO {
     @Override
     public List<UserModel> getUserByName(ManageRoleModel manageRoleModel) {
         String SQL = "select * from user where username = ?";
+        System.out.println("hello1");
         List <UserModel> users = jdbcTemplateObject.query(SQL,new Object[]{manageRoleModel.getUsername()}, new UserMapper());
-        System.out.println(users.get(0).getUsername());
         return users;
     }
 
@@ -159,7 +159,10 @@ public class IssueTrackerJDBCTemplate implements IssueTrackerDAO {
     public int signIn(UserModel userModel) {
         String SQL = "select * from user where username = ?";
         List<UserModel> users = jdbcTemplateObject.query(SQL,new Object[]{userModel.getUsername()}, new UserMapper());
-        if(users != null){
+        if(users.isEmpty()){
+            System.out.println("User Doesn't Exist");
+            return -1;
+        }else{
             UserModel user = users.get(0);
             if(user.getPassword().equals( userModel.getPassword())){
                 System.out.println("Login Successful");
@@ -170,10 +173,6 @@ public class IssueTrackerJDBCTemplate implements IssueTrackerDAO {
                 System.out.println("Invalid Password");
                 return 0;
             }
-        }
-        else{
-            System.out.println("User Doesn't Exist");
-            return 2;
         }
     }
 

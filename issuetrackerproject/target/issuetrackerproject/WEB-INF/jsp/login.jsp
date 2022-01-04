@@ -1,6 +1,6 @@
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" href="css/login.css">
+    <link rel="stylesheet" type="text/css" href="css/login.css?version=27">
 </head>
 <body>
 
@@ -15,15 +15,17 @@
 </div>
 
 <div class="login-form">
-<form>
+<form action="login" modelAttribute="userFormData">
     <h3>Login/SignUp</h3>
+    <p id="login-message"> ${message}</p>
     <label for="username">Username</label>
     <br>
-    <input type="text" name="username"/>
+    <input type="text" name="username" required/>
     <br>
+<%--    <br id ="linebreak" style="display: none">--%>
     <label for="password">Password</label>
     <br>
-    <input type="password" name="password"/>
+    <input type="password" name="password" required/>
     <br>
     <input type="submit" name="Login" value="Login"/>
     <br>
@@ -32,7 +34,7 @@
     <br>
     <label> Don't have an account?</label>
     <br>
-    <input type="submit" name="Signup" value="Signup" id="signup"/>
+    <input type="submit" name="Signup" value="Signup" id="signup" formaction="signup"/>
 
 </form>
 

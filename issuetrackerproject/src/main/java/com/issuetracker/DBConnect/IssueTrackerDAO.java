@@ -17,6 +17,7 @@ public interface IssueTrackerDAO {
     public List<UserModel> getUserByName(ManageRoleModel manageRoleModel);
     public List<ProjectModel> getProjectByName(ManageRoleModel manageRoleModel);
 
+
     public void roleAssignment(int project_id, int user_id, String role);
 
     abstract void createUser(UserModel userModel);

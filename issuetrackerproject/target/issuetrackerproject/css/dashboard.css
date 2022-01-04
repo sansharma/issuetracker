@@ -59,11 +59,13 @@ table{
     border-collapse: collapse;
 }
 div.project-table th {
-    padding-bottom: 20px;
+    padding-bottom: 15px;
+    padding-top: 10px;
 }
 
 div.project-table td {
-    padding-bottom: 40px;
+    padding-bottom: 15px;
+    padding-top: 10px;
 }
 
 div.project-table tr {

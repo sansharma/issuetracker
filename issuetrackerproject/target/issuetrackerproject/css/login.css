@@ -1,5 +1,5 @@
 body{
-    background-color: #af98e0;
+    background-color: #4b4276;
 }
 
 div.site-description{
@@ -24,7 +24,7 @@ div.login-form{
 }
 
 input[type=submit]{
-    background-color: #af98e0;
+    background-color: #4b4276;
     padding: 15px 10px 15px 10px;
     width:86%;
     margin-left:10px;
@@ -59,6 +59,7 @@ label{
 }
 h3{
     text-align: center;
+    line-height:30%;
 }
 
 a{
@@ -67,4 +68,10 @@ a{
 }
 #signup{
     margin-top: 2px;
+}
+#login-message{
+    color:red;
+    padding-top: 0px;
+    line-height: 20%;
+    margin-left: 10px;
 }
