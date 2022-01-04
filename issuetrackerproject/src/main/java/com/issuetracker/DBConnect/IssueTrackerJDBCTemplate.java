@@ -3,10 +3,7 @@ package com.issuetracker.DBConnect;
 import com.issuetracker.Mapper.ProjectMapper;
 import com.issuetracker.Mapper.TicketMapper;
 import com.issuetracker.Mapper.UserMapper;
-import com.issuetracker.Model.CompanyModel;
-import com.issuetracker.Model.ProjectModel;
-import com.issuetracker.Model.TicketModel;
-import com.issuetracker.Model.UserModel;
+import com.issuetracker.Model.*;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
@@ -26,51 +23,78 @@ public class IssueTrackerJDBCTemplate implements IssueTrackerDAO {
     }
 
     @Override
-    public List<UserModel> getUser() {
-        String SQL = "select * from user";
-        List <UserModel> users = jdbcTemplateObject.query(SQL, new UserMapper());
+    public List<UserModel> getUser(CommonIDModel commonIDModel) {
+        String SQL = "select * from user where company_id = ?";
+        List <UserModel> users = jdbcTemplateObject.query(SQL,new Object[]{commonIDModel.getId()}, new UserMapper());
         return users;
     }
 
     @Override
-    public List<TicketModel> getTicket() {
+    public List<TicketModel> getTicket(CommonIDModel commonIDModel) {
         String SQL = "select * from ticket";
         List <TicketModel> tickets = jdbcTemplateObject.query(SQL, new TicketMapper());
         return tickets;
     }
 
     @Override
-    public List<ProjectModel> getProject() {
-        String SQL = "select * from project";
-        List <ProjectModel> projects = jdbcTemplateObject.query(SQL, new ProjectMapper());
+    public List<ProjectModel> getProject(CommonIDModel commonIDModel) {
+        String SQL = "select * from project where company_id = ?";
+        List <ProjectModel> projects = jdbcTemplateObject.query(SQL, new Object[]{commonIDModel.getId()}, new ProjectMapper());
         return projects;
     }
 
     @Override
-    public void createUser(String username, String password, String email, String role, int company_id) {
-        String SQL = "insert into user (username, password, email, role, company_id) values (?, ?, ?, ?, ?)";
+    public List<UserModel> getUserByName(ManageRoleModel manageRoleModel) {
+        String SQL = "select * from user where username = ?";
+        List <UserModel> users = jdbcTemplateObject.query(SQL,new Object[]{manageRoleModel.getUsername()}, new UserMapper());
+        System.out.println(users.get(0).getUsername());
+        return users;
+    }
 
-        jdbcTemplateObject.update( SQL, username, password, email, role, company_id);
-        System.out.println("Created Record Name = " + username + " Age = " + password);
+    @Override
+    public List<ProjectModel> getProjectByName(ManageRoleModel manageRoleModel) {
+        System.out.println("Hello");
+        System.out.println(manageRoleModel.getProject_name());
+        String SQL = "select * from project where project_name = ?";
+        List <ProjectModel> projects = jdbcTemplateObject.query(SQL, new Object[]{manageRoleModel.getProject_name()}, new ProjectMapper());
+        System.out.println(projects.get(0).getProject_name());
+        System.out.println("Hello");
+        return projects;
+    }
+
+    @Override
+    public void createUser(UserModel userModel) {
+        String SQL = "insert into user (username, password, email, privilege, company_id) values (?, ?, ?, ?, ?)";
+
+        //System.out.println(userModel.getCompany_id());
+        jdbcTemplateObject.update( SQL, userModel.getUsername(),userModel.getPassword(),userModel.getEmail(),userModel.getPrivilege(),userModel.getCompany_id());
+        System.out.println("Created Record Name = ");
         return;
     }
 
     @Override
-    public void createTicket(String ticket_name, String ticket_description, String ticket_priority, String status, int assigned_to, int submitter_id, int project_id) {
+    public void createTicket(TicketModel ticketModel) {
         String SQL = "insert into ticket (ticket_name, ticket_description, ticket_priority, status, assigned_to,submitter_id, project_id) values (?, ?, ?, ?, ?,?,?)";
 
-        jdbcTemplateObject.update( SQL, ticket_name, ticket_description, ticket_priority, status, assigned_to, submitter_id, project_id);
+        jdbcTemplateObject.update( SQL, ticketModel.getTicket_name(),ticketModel.getTicket_description(),ticketModel.getTicket_priority(),ticketModel.getStatus(),ticketModel.getAssigned_to(),ticketModel.getSubmitter_id(),ticketModel.getProject_id());
         System.out.println("Created Record Name ");
         return;
     }
 
     @Override
-    public void createProject(String project_name, String start_date, int company_id) {
+    public void createProject(ProjectModel projectModel) {
         String SQL = "insert into project (project_name, start_date, company_id) values (?, ?, ?)";
 
-        jdbcTemplateObject.update( SQL, project_name, start_date, company_id);
+        jdbcTemplateObject.update( SQL, projectModel.getProject_name(),projectModel.getStart_date(),projectModel.getCompany_id());
         System.out.println("Created Record Name ");
-        return;
+    }
+
+    @Override
+    public void roleAssignment(int project_id, int user_id, String role) {
+        String SQL = "insert into role_assignment (project_id, user_id, role) values (?, ?, ?)";
+
+        jdbcTemplateObject.update( SQL, project_id, user_id, role);
+        System.out.println("Created Record Name ");
     }
 
     @Override
@@ -139,7 +163,8 @@ public class IssueTrackerJDBCTemplate implements IssueTrackerDAO {
             UserModel user = users.get(0);
             if(user.getPassword().equals( userModel.getPassword())){
                 System.out.println("Login Successful");
-                return 1;
+                System.out.println(user.getCompany_id());
+                return user.getCompany_id();
             }
             else{
                 System.out.println("Invalid Password");

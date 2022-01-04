@@ -26,7 +26,9 @@ public class LoginController {
             result , ModelMap model){
         IssueTrackerJDBCTemplate issueTrackerJDBCTemplate = (IssueTrackerJDBCTemplate) context.getBean("issueTrackerJDBCTemplate");
         int login_value = issueTrackerJDBCTemplate.signIn(formData);
-        if(login_value == 1){
+        if(login_value >= 1){
+            System.out.println("hello");
+            model.addAttribute("company_id",login_value );
             return "dashboard";
         }
         else{

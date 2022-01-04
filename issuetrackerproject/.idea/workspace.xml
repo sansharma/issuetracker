@@ -10,43 +10,49 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="23158083-ad61-4fec-bf33-c0a1c4c79a92" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/issuetrackerproject_war.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/issuetrackerproject_war_exploded.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_protobuf_protobuf_java_3_11_4.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_logging_commons_logging_1_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_11.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_8_0_27.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_4_3_3_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_4_3_3_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_4_3_3_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_4_3_3_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_4_3_3_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jdbc_4_3_3_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_4_3_3_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_4_3_3_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webmvc_4_3_3_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/issuetrackerproject.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/issuetracker/Controller/LoginController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/issuetracker/Controller/PageRedirectController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/login.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__jstl_jstl_1_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/issuetrackerproject_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/issuetrackerproject_war_exploded.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/issuetrackerproject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/issuetrackerproject.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/issuetracker/LoginPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/issuetracker/Controller/LoginPageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/dispatcher-servlet.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/dispatcher-servlet.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/index.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/issuetracker/LoginPageController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/issuetracker/Controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/issuetracker/Controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/issuetracker/Controller/LoginPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/issuetracker/Controller/LoginPageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/issuetracker/Controller/PageRedirectController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/issuetracker/Controller/PageRedirectController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/issuetracker/DBConnect/IssueTrackerDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/issuetracker/DBConnect/IssueTrackerDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/issuetracker/DBConnect/IssueTrackerJDBCTemplate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/issuetracker/DBConnect/IssueTrackerJDBCTemplate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/dashboard.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/dashboard.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/register.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/issuetracker/Controller/LoginController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/issuetracker/Controller/LoginPageController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/issuetracker/Controller/PageRedirectController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/issuetracker/DBConnect/IssueTrackerDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/issuetracker/DBConnect/IssueTrackerJDBCTemplate.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/issuetracker/Mapper/ProjectMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/issuetracker/Mapper/TicketMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/issuetracker/Mapper/UserMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/issuetracker/Model/CompanyModel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/issuetracker/Model/ProjectModel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/issuetracker/Model/TicketModel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/issuetracker/Model/UserModel.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/issuetrackerproject.war" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/issuetrackerproject/META-INF/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/issuetrackerproject/WEB-INF/classes/com/issuetracker/LoginPageController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/issuetrackerproject/WEB-INF/classes/com/issuetracker/Controller/LoginController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/issuetrackerproject/WEB-INF/classes/com/issuetracker/Controller/LoginPageController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/issuetrackerproject/WEB-INF/classes/com/issuetracker/Controller/PageRedirectController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/issuetrackerproject/WEB-INF/classes/com/issuetracker/DBConnect/IssueTrackerDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/issuetrackerproject/WEB-INF/classes/com/issuetracker/DBConnect/IssueTrackerJDBCTemplate.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/issuetrackerproject/WEB-INF/classes/com/issuetracker/Mapper/ProjectMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/issuetrackerproject/WEB-INF/classes/com/issuetracker/Mapper/TicketMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/issuetrackerproject/WEB-INF/classes/com/issuetracker/Mapper/UserMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/issuetrackerproject/WEB-INF/classes/com/issuetracker/Model/CompanyModel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/issuetrackerproject/WEB-INF/classes/com/issuetracker/Model/ProjectModel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/issuetrackerproject/WEB-INF/classes/com/issuetracker/Model/TicketModel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/issuetrackerproject/WEB-INF/classes/com/issuetracker/Model/UserModel.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/issuetrackerproject/WEB-INF/dispatcher-servlet.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/issuetrackerproject/WEB-INF/jsp/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/issuetrackerproject/WEB-INF/jsp/dashboard.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/issuetrackerproject/WEB-INF/jsp/login.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/issuetrackerproject/WEB-INF/jsp/register.jsp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/issuetrackerproject/WEB-INF/lib/commons-logging-1.2.jar" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/issuetrackerproject/WEB-INF/lib/mysql-connector-java-8.0.27.jar" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/issuetrackerproject/WEB-INF/lib/protobuf-java-3.11.4.jar" beforeDir="false" />
@@ -213,7 +219,12 @@
       <updated>1640909004052</updated>
       <workItem from="1640909005957" duration="11045000" />
       <workItem from="1640973818562" duration="399000" />
-      <workItem from="1640974259678" duration="9661000" />
+      <workItem from="1640974259678" duration="10273000" />
+      <workItem from="1641068280361" duration="5824000" />
+      <workItem from="1641084127495" duration="7898000" />
+      <workItem from="1641224490877" duration="9509000" />
+      <workItem from="1641243652349" duration="4561000" />
+      <workItem from="1641259196572" duration="15864000" />
     </task>
     <servers />
   </component>

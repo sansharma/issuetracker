@@ -1,9 +1,6 @@
 package com.issuetracker.DBConnect;
 
-import com.issuetracker.Model.CompanyModel;
-import com.issuetracker.Model.ProjectModel;
-import com.issuetracker.Model.TicketModel;
-import com.issuetracker.Model.UserModel;
+import com.issuetracker.Model.*;
 
 import javax.sql.DataSource;
 import java.util.List;
@@ -11,17 +8,22 @@ import java.util.List;
 public interface IssueTrackerDAO {
     public void setDataSource(DataSource ds);
 
-    public List<UserModel> getUser();
+    public List<UserModel> getUser(CommonIDModel commonIDModel);
 
-    public List<TicketModel> getTicket();
+    public List<TicketModel> getTicket(CommonIDModel commonIDModel);
 
-    public List<ProjectModel> getProject();
+    public List<ProjectModel> getProject(CommonIDModel commonIDModel);
 
-    abstract void createUser(String username, String password, String email, String role, int company_id);
+    public List<UserModel> getUserByName(ManageRoleModel manageRoleModel);
+    public List<ProjectModel> getProjectByName(ManageRoleModel manageRoleModel);
 
-    public void createTicket(String ticket_name, String ticket_description, String ticket_priority, String status, int assigned_to, int submitter_id, int project_id);
+    public void roleAssignment(int project_id, int user_id, String role);
 
-    public void createProject(String project_name, String start_date, int company_id);
+    abstract void createUser(UserModel userModel);
+
+    public void createTicket(TicketModel ticketModel);
+
+    public void createProject(ProjectModel projectModel);
 
     public void updateUser();
 
@@ -39,6 +41,7 @@ public interface IssueTrackerDAO {
 
     public int signIn(UserModel userModel);
     // Project Manager
+
 
     public List<ProjectModel> getMyProjects();
 

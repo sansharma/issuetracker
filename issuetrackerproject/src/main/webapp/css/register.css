@@ -1,0 +1,58 @@
+body{
+    background-color: #af98e0;
+}
+
+div.register-form{
+    margin-left:400px;
+    margin-top: 10px;
+    background-color: ghostwhite;
+    width:40%;
+    box-shadow: 5px 10px #888888;
+}
+
+input[type=submit]{
+    background-color: #af98e0;
+    padding: 15px 10px 15px 10px;
+    width:87%;
+    margin-left:10px;
+    margin-bottom:10px;
+    border: none;
+    font-size: 18px;
+    color:white;
+    border-radius: 4px;
+}
+input[type=text]{
+    padding:15px 270px 15px 10px ;
+    margin-left:10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+input[type=password]{
+    padding:15px 270px 15px 10px ;
+    margin-left:10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+
+}
+label{
+    margin-left: 10px;
+    size: 20px;
+}
+h2{
+    padding-top: 20px;
+    text-align: center;
+}
+
+a{
+    margin-left:10px;
+    margin-bottom: 20px;
+}
+#signup{
+    margin-top: 2px;
+}
