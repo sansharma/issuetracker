@@ -5,7 +5,7 @@ public class UserModel {
     String username;
     String password;
     String email;
-    int privilege;
+    String role;
     int company_id;
 
     public int getId() {
@@ -40,12 +40,12 @@ public class UserModel {
         this.email = email;
     }
 
-    public int getPrivilege() {
-        return privilege;
+    public String getRole() {
+        return role;
     }
 
-    public void setPrivilege(int privilege) {
-        this.privilege = privilege;
+    public void setRole(String role) {
+        this.role = role;
     }
 
     public int getCompany_id() {

@@ -10,21 +10,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="23158083-ad61-4fec-bf33-c0a1c4c79a92" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_gson_gson_2_8_7.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_json_json_20211205.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/artifacts/issuetrackerproject_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/issuetrackerproject_war_exploded.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/issuetrackerproject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/issuetrackerproject.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/issuetracker/Controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/issuetracker/Controller/AdminController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/issuetracker/Controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/issuetracker/Controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/issuetracker/Controller/LoginPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/issuetracker/Controller/LoginPageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/issuetracker/Controller/PageRedirectController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/issuetracker/Controller/PageRedirectController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/issuetracker/DBConnect/IssueTrackerDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/issuetracker/DBConnect/IssueTrackerDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/issuetracker/DBConnect/IssueTrackerJDBCTemplate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/issuetracker/DBConnect/IssueTrackerJDBCTemplate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/dispatcher-servlet.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/dispatcher-servlet.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/issuetracker/Mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/issuetracker/Mapper/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/issuetracker/Model/ManageRoleModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/issuetracker/Model/ManageRoleModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/issuetracker/Model/UserModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/issuetracker/Model/UserModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/dashboard.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/dashboard.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/login.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/register.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/managerole.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/managerole.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/css/dashboard.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/dashboard.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/login.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/css/register.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/register.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/validateform.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/validateform.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/issuetracker/Controller/AdminController.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/issuetracker/Controller/LoginController.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/issuetracker/Controller/LoginPageController.class" beforeDir="false" />
@@ -40,6 +45,7 @@
       <change beforePath="$PROJECT_DIR$/target/classes/com/issuetracker/Model/ProjectModel.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/issuetracker/Model/TicketModel.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/issuetracker/Model/UserModel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/issuetracker/Model/UserValidateModel.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/issuetrackerproject.war" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/issuetrackerproject/META-INF/MANIFEST.MF" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/issuetrackerproject/WEB-INF/classes/com/issuetracker/Controller/AdminController.class" beforeDir="false" />
@@ -57,12 +63,14 @@
       <change beforePath="$PROJECT_DIR$/target/issuetrackerproject/WEB-INF/classes/com/issuetracker/Model/ProjectModel.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/issuetrackerproject/WEB-INF/classes/com/issuetracker/Model/TicketModel.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/issuetrackerproject/WEB-INF/classes/com/issuetracker/Model/UserModel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/issuetrackerproject/WEB-INF/classes/com/issuetracker/Model/UserValidateModel.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/issuetrackerproject/WEB-INF/dispatcher-servlet.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/issuetrackerproject/WEB-INF/jsp/dashboard.jsp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/issuetrackerproject/WEB-INF/jsp/login.jsp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/issuetrackerproject/WEB-INF/jsp/managerole.jsp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/issuetrackerproject/WEB-INF/jsp/register.jsp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/issuetrackerproject/WEB-INF/lib/commons-logging-1.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/issuetrackerproject/WEB-INF/lib/gson-2.8.7.jar" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/issuetrackerproject/WEB-INF/lib/jstl-1.2.jar" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/issuetrackerproject/WEB-INF/lib/mysql-connector-java-8.0.27.jar" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/issuetrackerproject/WEB-INF/lib/protobuf-java-3.11.4.jar" beforeDir="false" />
@@ -79,6 +87,7 @@
       <change beforePath="$PROJECT_DIR$/target/issuetrackerproject/css/dashboard.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/issuetrackerproject/css/login.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/issuetrackerproject/css/register.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/issuetrackerproject/js/validateform.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,11 +100,20 @@
         <option value="Interface" />
         <option value="Jsp File" />
         <option value="Class" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -241,7 +259,21 @@
       <workItem from="1641305375440" duration="496000" />
       <workItem from="1641305890504" duration="10791000" />
       <workItem from="1641320082098" duration="7665000" />
-      <workItem from="1641328348871" duration="2885000" />
+      <workItem from="1641328348871" duration="3278000" />
+      <workItem from="1641338583030" duration="4005000" />
+      <workItem from="1641388455684" duration="4930000" />
+      <workItem from="1641410897620" duration="9506000" />
+      <workItem from="1641421299216" duration="3884000" />
+      <workItem from="1641426496539" duration="9079000" />
+      <workItem from="1641438949012" duration="7239000" />
+      <workItem from="1641482602627" duration="21232000" />
+      <workItem from="1641523070631" duration="767000" />
+      <workItem from="1641569980292" duration="5249000" />
+      <workItem from="1641584372041" duration="7943000" />
+      <workItem from="1641592816366" duration="1055000" />
+      <workItem from="1641646872719" duration="14210000" />
+      <workItem from="1641667487139" duration="8961000" />
+      <workItem from="1641743875019" duration="25292000" />
     </task>
     <servers />
   </component>

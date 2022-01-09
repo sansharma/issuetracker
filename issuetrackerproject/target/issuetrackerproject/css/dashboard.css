@@ -4,15 +4,14 @@ div.navbar{
     top: 0;
     position:absolute;
     left:0;
-    height:100%;
     width:15%;
-    padding-bottom: 500px;
+    height:100%;
     }
 ul{
-    background-color: #4b4276;
+    background-color: #2e179b;
     list-style-type: none;
-    margin: 0;
-    padding: 0;
+    margin:0;
+    padding:0;
     height:100%;
 }
 li a{
@@ -33,8 +32,13 @@ li a.active {
 }
 div.table-container{
     float:left;
+    margin-top: 10px;
+}
+
+div.table-main-container{
     margin-left: 300px;
     box-shadow: 5px 10px #888888;
+    margin-top: 50px;
 }
 
 div.table-description h3 {
@@ -47,7 +51,7 @@ div.table-description h4 {
 }
 
 div.table-description{
-    background-color:#4b4276 ;
+    background-color:#2e179b ;
     padding:1px 400px 1px 10px;
 }
 
@@ -55,7 +59,7 @@ table{
     width:100%;
     background-color: ghostwhite;
     text-align: center;
-    border: 1px solid #4b4276 ;
+    border: 1px solid #2e179b;
     border-collapse: collapse;
 }
 div.project-table th {
@@ -69,6 +73,59 @@ div.project-table td {
 }
 
 div.project-table tr {
-    border-bottom: 1px solid #4b4276 ;
+    border-bottom: 1px solid #2e179b ;
     padding-bottom: 40px;
+}
+
+#addprojectbutton{
+    margin-bottom: 300px;
+    padding:10px 5px 10px 5px;
+    background-color: #2e179b ;
+    text-decoration: none;
+    color:white;
+    margin-left: 300px;
+}
+#createticketbutton{
+    margin-bottom: 300px;
+    padding:10px 5px 10px 5px;
+    background-color: #2e179b ;
+    text-decoration: none;
+    color:white;
+    margin-left: 300px;
+}
+
+.bg-modal{
+    background-color: white;
+    position: absolute;
+    width:50%;
+    height:50%;
+    display: flex;
+    top:15%;
+    left:30%;
+}
+#adduserbutton{
+    margin-bottom: 50px;
+    padding:10px 5px 10px 5px;
+    background-color: #2e179b ;
+    text-decoration: none;
+    color:white;
+    margin-left: 300px;
+}
+
+#addrolebutton{
+    margin-bottom: 50px;
+    padding:10px 5px 10px 5px;
+    background-color: #2e179b ;
+    text-decoration: none;
+    color:white;
+    margin-left: 300px;
+}
+
+#adduserprojectbutton{
+    margin-bottom: 300px;
+    padding:10px 5px 10px 5px;
+    background-color: #2e179b ;
+    text-decoration: none;
+    color:white;
+    margin-left: 300px;
 }

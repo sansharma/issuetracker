@@ -26,18 +26,30 @@ public class LoginController {
     public String loginUser(@ModelAttribute("registerFormData") UserModel formData, BindingResult
             result , ModelMap model){
         IssueTrackerJDBCTemplate issueTrackerJDBCTemplate = (IssueTrackerJDBCTemplate) context.getBean("issueTrackerJDBCTemplate");
-        int login_value = issueTrackerJDBCTemplate.signIn(formData);
+        List<UserModel> users = issueTrackerJDBCTemplate.signIn(formData);
 
-        if(login_value == -1){
-            model.addAttribute("message", "User Doesn't Exist!");
-            return "login";
-        } else if(login_value == 0){
-            model.addAttribute("message", "Invalid Password!");
+        if(users.isEmpty()){
+            System.out.println("User Doesn't Exist");
             return "login";
         }else{
-            System.out.println("hello");
-            model.addAttribute("company_id",login_value );
-            return "dashboard";
+            UserModel user = users.get(0);
+            model.addAttribute("user",user);
+            if(user.getPassword().equals( formData.getPassword())){
+                if(user.getRole().equals("0")){
+                    return "dashboard";
+                }else if(user.getRole().equals("projectmanager")){
+                    return "pm-dashboard";
+                } else if(user.getRole().equals("developer")){
+                    return "developer-dashboard";
+                }else{
+                    return"tester-dashboard";
+                }
+
+            }
+            else{
+                System.out.println("Invalid Password");
+                return "login";
+            }
         }
     }
 

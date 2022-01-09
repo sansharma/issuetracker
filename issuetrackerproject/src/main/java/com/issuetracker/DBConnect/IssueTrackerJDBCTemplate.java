@@ -1,8 +1,6 @@
 package com.issuetracker.DBConnect;
 
-import com.issuetracker.Mapper.ProjectMapper;
-import com.issuetracker.Mapper.TicketMapper;
-import com.issuetracker.Mapper.UserMapper;
+import com.issuetracker.Mapper.*;
 import com.issuetracker.Model.*;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
@@ -37,6 +35,20 @@ public class IssueTrackerJDBCTemplate implements IssueTrackerDAO {
     }
 
     @Override
+    public List<TicketModel> getTicketByProjectID(CommonIDModel commonIDModel) {
+        String SQL = "select * from ticket where project_id = ?";
+        List <TicketModel> tickets = jdbcTemplateObject.query(SQL,new Object[]{commonIDModel.getId()}, new TicketMapper());
+        return tickets;
+    }
+
+    @Override
+    public List<TicketModel> getTicketByCompanyID(CommonIDModel commonIDModel) {
+        String SQL = "select * from ticket inner join project on ticket.project_id = project.id and project.company_id = ?";
+        List <TicketModel> tickets = jdbcTemplateObject.query(SQL,new Object[]{commonIDModel.getId()}, new TicketMapper());
+        return tickets;
+    }
+
+    @Override
     public List<ProjectModel> getProject(CommonIDModel commonIDModel) {
         String SQL = "select * from project where company_id = ?";
         List <ProjectModel> projects = jdbcTemplateObject.query(SQL, new Object[]{commonIDModel.getId()}, new ProjectMapper());
@@ -44,6 +56,27 @@ public class IssueTrackerJDBCTemplate implements IssueTrackerDAO {
     }
 
     @Override
+    public List<ProjectModel> getProjectByID(CommonIDModel commonIDModel) {
+        String SQL = "select * from project where id = ?";
+        List <ProjectModel> projects = jdbcTemplateObject.query(SQL, new Object[]{commonIDModel.getId()}, new ProjectMapper());
+        return projects;
+    }
+    @Override
+    public List<TicketModel> getTicketByID(CommonIDModel commonIDModel) {
+        String SQL = "select * from ticket where id = ?";
+        List<TicketModel> tickets = jdbcTemplateObject.query(SQL, new Object[]{commonIDModel.getId()}, new TicketMapper());
+        return tickets;
+    }
+
+
+    @Override
+    public List<UserModel> getDeveloperByProjectID(CommonIDModel commonIDModel) {
+        String SQL = "select * from user u inner join role_assignment r on r.user_id = u.id  where u.role = ? and r.project_id = ?";
+        List<UserModel> tickets = jdbcTemplateObject.query(SQL, new Object[]{"developer", commonIDModel.getId()}, new UserMapper());
+        return tickets;
+    }
+
+        @Override
     public List<UserModel> getUserByName(ManageRoleModel manageRoleModel) {
         String SQL = "select * from user where username = ?";
         System.out.println("hello1");
@@ -64,10 +97,10 @@ public class IssueTrackerJDBCTemplate implements IssueTrackerDAO {
 
     @Override
     public void createUser(UserModel userModel) {
-        String SQL = "insert into user (username, password, email, privilege, company_id) values (?, ?, ?, ?, ?)";
+        String SQL = "insert into user (username, password, email, role, company_id) values (?, ?, ?, ?, ?)";
 
         //System.out.println(userModel.getCompany_id());
-        jdbcTemplateObject.update( SQL, userModel.getUsername(),userModel.getPassword(),userModel.getEmail(),userModel.getPrivilege(),userModel.getCompany_id());
+        jdbcTemplateObject.update( SQL, userModel.getUsername(),userModel.getPassword(),userModel.getEmail(),userModel.getRole(),userModel.getCompany_id());
         System.out.println("Created Record Name = ");
         return;
     }
@@ -90,11 +123,26 @@ public class IssueTrackerJDBCTemplate implements IssueTrackerDAO {
     }
 
     @Override
-    public void roleAssignment(int project_id, int user_id, String role) {
-        String SQL = "insert into role_assignment (project_id, user_id, role) values (?, ?, ?)";
+    public void roleAssignment( int user_id, String role) {
+        String SQL = "update user set role = ? where id = ?";
 
-        jdbcTemplateObject.update( SQL, project_id, user_id, role);
+        jdbcTemplateObject.update( SQL,role, user_id);
         System.out.println("Created Record Name ");
+    }
+
+    public void addUserToProject(AssignUserProjectModel assignUserProjectModel){
+        String SQL = "select * from role_assignment where project_id = ? and user_id = ?";
+        List<CountModel> countModel = jdbcTemplateObject.query(SQL, new Object[]{assignUserProjectModel.getProject_id(),assignUserProjectModel.getUser_id()}, new CountMapper());
+
+        if(countModel.isEmpty()){
+            String SQL1 = "insert into role_assignment (project_id, user_id) values (?, ?)";
+            jdbcTemplateObject.update( SQL1, assignUserProjectModel.getProject_id(), assignUserProjectModel.getUser_id());
+            System.out.println("Created Record Name ");
+        }
+        else{
+            System.out.println("Data Already Exists");
+        }
+
     }
 
     @Override
@@ -103,8 +151,17 @@ public class IssueTrackerJDBCTemplate implements IssueTrackerDAO {
     }
 
     @Override
-    public void updateTicket() {
+    public void updateTicket(TicketModel ticketModel) {
+        String SQL = "update ticket set ticket_name=?,  ticket_description=?, ticket_priority=?, status=?, assigned_to=? where id = ?";
+        jdbcTemplateObject.update( SQL,ticketModel.getTicket_name(), ticketModel.getTicket_description(), ticketModel.getTicket_priority(), ticketModel.getStatus(),ticketModel.getAssigned_to(),ticketModel.getId());
+        System.out.println("Created Record Name ");
+    }
 
+    @Override
+    public void updateDeveloperTicket(TicketModel ticketModel) {
+        String SQL = "update ticket set status=?  where id = ?";
+        jdbcTemplateObject.update( SQL, ticketModel.getStatus(), ticketModel.getId());
+        System.out.println("Created Record Name ");
     }
 
     @Override
@@ -156,24 +213,10 @@ public class IssueTrackerJDBCTemplate implements IssueTrackerDAO {
     }
 
     @Override
-    public int signIn(UserModel userModel) {
+    public List<UserModel> signIn(UserModel userModel) {
         String SQL = "select * from user where username = ?";
         List<UserModel> users = jdbcTemplateObject.query(SQL,new Object[]{userModel.getUsername()}, new UserMapper());
-        if(users.isEmpty()){
-            System.out.println("User Doesn't Exist");
-            return -1;
-        }else{
-            UserModel user = users.get(0);
-            if(user.getPassword().equals( userModel.getPassword())){
-                System.out.println("Login Successful");
-                System.out.println(user.getCompany_id());
-                return user.getCompany_id();
-            }
-            else{
-                System.out.println("Invalid Password");
-                return 0;
-            }
-        }
+        return users;
     }
 
     @Override
@@ -196,4 +239,28 @@ public class IssueTrackerJDBCTemplate implements IssueTrackerDAO {
         return null;
     }
 
+    @Override
+    public List<RoleModel> getRole(CommonIDModel commonIDModel) {
+        String SQL = "select username, role from user where company_id=?  ";
+        List<RoleModel> roles = jdbcTemplateObject.query(SQL,new Object[]{commonIDModel.getId()}, new RoleMapper());
+        return roles;
+    }
+
+    public List<RoleModel> getRoleForProject(CommonIDModel commonIDModel){
+        String SQL = "select u.username, u.role from user u inner join role_assignment r  on u.id=r.user_id where r.project_id=?";
+        List<RoleModel> roles = jdbcTemplateObject.query(SQL,new Object[]{commonIDModel.getId()}, new RoleMapper());
+        return roles;
+    }
+
+    public List<TicketModel> getDeveloperTickets(CommonIDModel commonIDModel){
+        String SQL = "select * from ticket where assigned_to=?  ";
+        List<TicketModel> tickets = jdbcTemplateObject.query(SQL,new Object[]{commonIDModel.getId()}, new TicketMapper());
+        return tickets;
+    }
+
+    public List<TicketDisplayModel> getPMTickets(CommonIDModel commonIDModel){
+        String SQL = "select t.id, t.ticket_name, t.ticket_description, t.ticket_priority, t.status, u.username,u1.username as username1, t.project_id from ticket as t inner join role_assignment as r on t.project_id = r.project_id inner join user u on t.assigned_to=u.id inner join user u1 on t.submitter_id = u1.id where r.user_id=? ";
+        List<TicketDisplayModel> tickets = jdbcTemplateObject.query(SQL,new Object[]{commonIDModel.getId()}, new TicketDisplayMapper());
+        return tickets;
+    }
 }

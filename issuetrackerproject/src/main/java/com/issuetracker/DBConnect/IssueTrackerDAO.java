@@ -12,13 +12,27 @@ public interface IssueTrackerDAO {
 
     public List<TicketModel> getTicket(CommonIDModel commonIDModel);
 
+    List<TicketModel> getTicketByProjectID(CommonIDModel commonIDModel);
+
+    List<TicketModel> getTicketByCompanyID(CommonIDModel commonIDModel);
+
     public List<ProjectModel> getProject(CommonIDModel commonIDModel);
 
+    public List<ProjectModel> getProjectByID(CommonIDModel commonIDModel);
+    public List<TicketModel> getTicketByID(CommonIDModel commonIDModel);
     public List<UserModel> getUserByName(ManageRoleModel manageRoleModel);
+    public List<UserModel> getDeveloperByProjectID(CommonIDModel commonIDModel);
+
     public List<ProjectModel> getProjectByName(ManageRoleModel manageRoleModel);
 
+    public List<RoleModel> getRole(CommonIDModel commonIDModel);
+    public List<RoleModel> getRoleForProject(CommonIDModel commonIDModel);
 
-    public void roleAssignment(int project_id, int user_id, String role);
+    public List<TicketModel> getDeveloperTickets(CommonIDModel commonIDModel);
+    public List<TicketDisplayModel> getPMTickets(CommonIDModel commonIDModel);
+
+
+    public void roleAssignment(int user_id, String role);
 
     abstract void createUser(UserModel userModel);
 
@@ -28,7 +42,8 @@ public interface IssueTrackerDAO {
 
     public void updateUser();
 
-    public void updateTicket();
+    public void updateTicket(TicketModel ticketModel);
+    public void updateDeveloperTicket(TicketModel ticketModel);
 
     public void updateProject();
 
@@ -40,14 +55,16 @@ public interface IssueTrackerDAO {
 
     public void signUp(CompanyModel companyModel);
 
-    public int signIn(UserModel userModel);
+    public List<UserModel> signIn(UserModel userModel);
     // Project Manager
 
 
     public List<ProjectModel> getMyProjects();
 
     public List<TicketModel> getDeveloperTickets();
+
     public List<TicketModel> getTesterTickets();
+
     public List<TicketModel> getProjectManagerTickets();
 
 }

@@ -1,0 +1,141 @@
+
+div.bg-modal{
+    display: none;
+    position:absolute;
+    width:100%;
+    height:100%;
+    background-color: rgba(0,0,0,0.5);
+    left:0;
+    top:0;
+    clear:left;
+}
+
+div.bg-modal-1{
+    display: none;
+    position:absolute;
+    width:100%;
+    height:100%;
+    background-color: rgba(0,0,0,0.5);
+    left:0;
+    top:0;
+    clear:left;
+}
+
+div.addproject-form{
+    position: absolute;
+    left:400px;
+    top:50px;
+    background-color: ghostwhite;
+}
+
+div.addticket-form{
+    position: absolute;
+    left:400px;
+    top:20px;
+    background-color: ghostwhite;
+}
+
+input[type=submit]{
+    background-color: #2e179b;
+    padding: 10px 10px 15px 10px;
+    width:87%;
+    margin-left:10px;
+    margin-bottom:10px;
+    border: none;
+    font-size: 18px;
+    color:white;
+    border-radius: 4px;
+}
+input[type=text]{
+    padding:10px 270px 10px 10px ;
+    margin-left:10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+input[type=password]{
+    padding:10px 270px 10px 10px ;
+    margin-left:10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+
+}
+
+select{
+    padding:10px 270px 10px 10px ;
+    margin-left:10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+
+}
+
+
+label{
+    margin-left: 10px;
+    size: 20px;
+}
+h2{
+    margin-top: 0;
+    padding-top: 20px;
+    text-align: center;
+    background-color: #2e179b;
+    color:white;
+}
+
+a{
+    margin-left:10px;
+    margin-bottom: 20px;
+}
+.closeBtn{
+    float:right;
+    color:#ccc;
+    font-size: 30px;
+}
+
+.closeBtn1{
+    float:right;
+    color:#ccc;
+    font-size: 30px;
+}
+.closeBtn:hover, .closeBtn:focus{
+    color:#000;
+    text-decoration: none;
+    cursor:pointer;
+}
+
+.closeBtn1:hover, .closeBtn1:focus{
+    color:#000;
+    text-decoration: none;
+    cursor:pointer;
+}
+
+#project_id {
+    margin-left: 10px;
+    margin-bottom: 5px;
+    margin-top:5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+#ticket_priority{
+    margin-left: 10px;
+    margin-bottom: 5px;
+    margin-top:5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#ticket_status{
+    margin-left: 10px;
+    margin-bottom: 5px;
+    margin-top:5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
